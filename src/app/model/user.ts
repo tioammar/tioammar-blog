@@ -2,9 +2,7 @@ export class User {
   constructor() {}
 
   id: number;
-  firstName: string;
-  lastName: string;
   username: string;
+  avatar: string;
   email: string;
-  password: string;
 }

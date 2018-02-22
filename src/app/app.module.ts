@@ -8,20 +8,27 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogComponent } from './blog/blog.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { ArchiveListComponent } from './archive-list/archive-list.component';
+import { HttpModule } from '@angular/http';
+import { BlogsService } from './blogs.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlogListComponent,
-    BlogComponent
+    BlogComponent,
+    GalleryComponent,
+    ArchiveListComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
   ],
-  providers: [],
+  providers: [BlogsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
