@@ -4,6 +4,7 @@ import { User } from '../model/user';
 import { Observable } from 'rxjs';
 import { BlogsService } from '../blogs.service';
 import { error } from 'util';
+import { JsonResponse } from '../model/json-response';
 
 @Component({
   selector: 'app-blog-list',
@@ -14,7 +15,6 @@ export class BlogListComponent implements OnInit {
 
   constructor(private blogService: BlogsService) { }
 
-  private data: Observable<Blog[]>;
   private blogs: Blog[];
   private user: User;
   private errorMessage: string;
@@ -28,13 +28,12 @@ export class BlogListComponent implements OnInit {
   }
 
   getBlogs(): void {
-    this.data = this.blogService.getBlogs(this.count);
-    this.data.subscribe(
-      json => {
-        this.blogs = json["blogs"];
-        this.user = json["user"];
-      }, // see notebook page 6 for documentation
-      errorMessage => this.errorMessage = <any>errorMessage
+    this.blogService.getBlogs(this.count).subscribe(
+      // using resp in case our app get full reponse from server
+      resp => {
+        this.user = resp.body.user;
+        this.blogs = resp.body.blogs;
+      }
     );
   }
 

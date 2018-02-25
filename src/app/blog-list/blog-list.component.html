@@ -1,5 +1,5 @@
 <!-- gonna make a list of blog here -->
-<p>List of Blogs by {{user.username}}</p>
+<p>List of Blogs by {{user.username}} ({{user.email}})</p>
 <ul>
   <li *ngFor="let blog of blogs" >
     Title: {{blog.title}}, Content: {{blog.content}}

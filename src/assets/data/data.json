@@ -1,20 +1,20 @@
 {
       "user": {
-            "id":"1",
+            "id":1,
             "username":"Tioammar",
             "avatar":"Image",
             "email":"adityaamirullah@gmail.com"
       },
       "blogs":   [
             {  
-            "id":"1",
+            "id":1,
             "title":"Blog 1",
             "content":"Blog 1 Content ",
             "author":"Tioammar",
             "datetime":"1503407989719"
             },
             {  
-            "id":"2",
+            "id":2,
             "title":"Blog 2",
             "content":"Blog 2 Content",
             "author":"Tioammar",

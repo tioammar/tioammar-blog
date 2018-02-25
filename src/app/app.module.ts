@@ -12,6 +12,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ArchiveListComponent } from './archive-list/archive-list.component';
 import { HttpModule } from '@angular/http';
 import { BlogsService } from './blogs.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,11 @@ import { BlogsService } from './blogs.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    HttpClientModule // must import this to user HttpClient and HttpResponse
   ],
-  providers: [BlogsService],
+  providers: [
+    BlogsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
