@@ -15,9 +15,5 @@ export class BlogComponent implements OnInit {
   user = new User();
 
   ngOnInit() {
-    this.user.username = "Tioammar";
-    this.blog.title = "Hello World!";
-    this.blog.content = "Lorem Ipsum Dolor Sit Amet";
-    this.blog.author = this.user.username;
   }
 }

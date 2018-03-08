@@ -31,7 +31,7 @@ export class BlogsService {
   }
 
   // return observable JsonResponse to parse into object
-  // note: angular is automatically parse json to anonimous objec. All you can do is to create an object as representation!
+  // note: angular is automatically parse json to anonimous object. All you can do is to create an object as representation!
   // in this case, it's JsonResponse. angular awesome!
   getBlogs(count: number): Observable<HttpResponse<JsonResponse>> {
     // this.reqUrl = this.blogUrl + "/" + count;

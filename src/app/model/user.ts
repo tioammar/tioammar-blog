@@ -2,7 +2,8 @@ export class User {
   constructor() {}
 
   id: number;
-  username: string;
+  firstName: string;
+  lastName: string;
   avatar: string;
-  email: string;
+  // email: string;
 }

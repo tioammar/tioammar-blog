@@ -16,8 +16,7 @@ export class BlogListComponent implements OnInit {
   constructor(private blogService: BlogsService) { }
 
   private blogs: Blog[];
-  private user: User;
-  private errorMessage: string;
+  // private errorMessage: string;
   private count: number;
 
   ngOnInit() {
@@ -31,8 +30,7 @@ export class BlogListComponent implements OnInit {
     this.blogService.getBlogs(this.count).subscribe(
       // using resp in case our app get full reponse from server
       resp => {
-        this.user = resp.body.user;
-        this.blogs = resp.body.blogs;
+        this.blogs = resp.body.blog; // body is JsonReponse object lol
       }
     );
   }
