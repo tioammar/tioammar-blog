@@ -11,9 +11,7 @@ export class BlogComponent implements OnInit {
 
   constructor() { }
 
-  blog = new Blog();
-  user = new User();
+  blog: Blog;
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 }

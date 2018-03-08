@@ -16,27 +16,22 @@ export class BlogListComponent implements OnInit {
   constructor(private blogService: BlogsService) { }
 
   private blogs: Blog[];
-  // private errorMessage: string;
   private count: number;
 
   ngOnInit() {
-    // the initial count of blogs we retrieve
     this.count = 10;
-    // get the blog;
     this.getBlogs();
   }
 
   getBlogs(): void {
     this.blogService.getBlogs(this.count).subscribe(
-      // using resp in case our app get full reponse from server
       resp => {
-        this.blogs = resp.body.blog; // body is JsonReponse object lol
+        this.blogs = resp.body.blog;
       }
     );
   }
 
   onUpdateChange(): void {
-    // update blog count on  "show more" clicked and update blog on page
     this.count = this.count + 5;
     this.getBlogs();
   }
